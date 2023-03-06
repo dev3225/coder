@@ -61,17 +61,17 @@ function chatStripe(isAi, value, uniqueId) {
 }
 
 //Acts as a trigger to get the AI generated response
-const handleSubmit = async (e) =>{
+const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
   //user's chatstripüe
-  chatContainer.innerHTML += chatStripe(false,data.get('prompt'));
+  chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
   form.reset();
   //bot's chatstripe
   const uniqueId = generateUniqueId();
-  chatContainer.innerHTML += chatStripe(true," ",uniqueId);
-  
+  chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
+
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
   const messageDiv = document.getElementById(uniqueId);
@@ -81,8 +81,8 @@ const handleSubmit = async (e) =>{
 }
 
 form.addEventListener('submit', handleSubmit);
-form.addEventListener('keyup',(e) =>{
-  if(e.keycode === 13){
+form.addEventListener('keyup', (e) => {
+  if (e.keycode === 13) {
     handleSubmit(e);
   }
 })

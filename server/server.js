@@ -5,12 +5,12 @@ import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();        // Allows us to use dotenv variables
 
-const Configuration = new Configuration({
+const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
 //Creating instances for openai
-const openai = new OpenAIApi(Configuration);
+const openai = new OpenAIApi(configuration);
 
 //Initializing our express application by calling it as a function
 const app = express();
@@ -47,4 +47,4 @@ app.post('/', async (req, res) => {        //Post data from backend to frontend
     }
 })
 
-app.listen(5000,() => console.log('Server is running on port http://localhost:5000'));
+app.listen(1080,() => console.log('Server is running on port http://localhost:1080'));

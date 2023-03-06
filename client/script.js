@@ -53,11 +53,30 @@ function chatStripe(isAi, value, uniqueId) {
               alt = "${isAi ? 'bot' : 'user'}"
             />
           </div>
-          <div class="message" id=${uniqueId}>${value}</div>
+          <div class="message" id=${uniqueId}>  ${value}  </div>
         </div>
       </div>
     `
   )
 }
 
+//Acts as a trigger to get the AI generated response
+const handleSubmit = async (e) =>{
+  e.preventDefault();
+
+  const data = new FormData(form);
+  //user's chatstripüe
+  chatContainer.innerHTML += chatStripe(false,data.get('prompt'));
+  form.reset();
+  //bot's chatstripe
+  const uniqueId = generateUniqueId();
+  chatContainer.innerHTML += chatStripe(true," ",uniqueId);
+  
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+
+  const messageDiv = document.getElementById(uniqueId);
+
+  loader(messageDiv);
+
+}
 

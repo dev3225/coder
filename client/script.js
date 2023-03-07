@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   //Fetchc data from server - bot's response
-  const response = await fetch('http://localhost:1080',{
+  const response = await fetch('https://coder-crdd.onrender.com',{
     method: 'POST',
     headers:{
       'Content-Type': 'application/json'

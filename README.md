@@ -1,4 +1,4 @@
 # coder
 OpenAI ChatGPT application that can help one code better
 
-Server: http://localhost:1080
+Website hosted through vercel on: https://coder-three.vercel.app

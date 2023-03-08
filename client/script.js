@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   //Fetchc data from server - bot's response
-  const response = await fetch('https://coder-crdd.onrender.com',{
+  const response = await fetch('http://localhost:1008',{
     method: 'POST',
     headers:{
       'Content-Type': 'application/json'
@@ -88,13 +88,14 @@ const handleSubmit = async (e) => {
       prompt: data.get('prompt')
     })
   })
+  console.log(response);
 
   clearInterval(loadInterval);
   messageDiv.innerHTML = '';
 
   if (response.ok){
     const data = await response.json();
-    const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
+    const parsedData = data.bot.trim() // trims any trailing spaces 
 
     typeText(messageDiv, parsedData)
   }

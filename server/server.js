@@ -22,13 +22,14 @@ app.use(express.json());        //Allows us to handle json requests from front-e
 //Route handler setup
 app.get('/', async (req, res) => {
     res.status(200).send({          //200 - OK
-        message: 'Hello from coder',
+        message: 'Hello from coder!!',
     })
 });
 
 app.post('/', async (req, res) => {        //Post data from backend to frontend
     try {
         const prompt = req.body.prompt;
+        console.log(prompt);
 
         const response = await openai.createCompletion({        //Get a response from openai //function(createCompletion) that accepts an object
             model: "text-davinci-003",      //any GPT model can be used but I am using this because it has better processinf between text and code generation
@@ -40,7 +41,7 @@ app.post('/', async (req, res) => {        //Post data from backend to frontend
             presence_penalty: 0,
         });
 
-        res.status.send({
+        res.status(200).send({
             bot: response.data.choices[0].text
         })
     } catch (error) {

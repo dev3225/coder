@@ -49,4 +49,4 @@ app.post('/', async (req, res) => {        //Post data from backend to frontend
     }
 })
 
-app.listen(1080,() => console.log('Server is running on port https://localhost:1080'));
+app.listen(1080,() => console.log('Server is running on port http://localhost:1080'));

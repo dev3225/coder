@@ -34,7 +34,7 @@ app.post('/', async (req, res) => {        //Post data from backend to frontend
             model: "text-davinci-003",      //any GPT model can be used but I am using this because it has better processinf between text and code generation
             prompt: `${prompt}`,
             temperature: 0,       //Higher number allows the model to return riskier solutions rather than precise(eg: 0.5, 0.7,etc.,)
-            max_tokens: 64,     //Longer responses are possible. default - 64 
+            max_tokens: 3000,     //Longer responses are possible. default - 64 
             top_p: 1,
             frequency_penalty: 0.5,     //penality if sentences are repeated.
             presence_penalty: 0,

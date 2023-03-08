@@ -50,4 +50,4 @@ app.post('/', async (req, res) => {        //Post data from backend to frontend
     }
 })
 
-app.listen(1008,() => console.log('Server is running on port http://localhost:1008'));
+app.listen(1100,() => console.log('Server is running on port http://localhost:1100'));
